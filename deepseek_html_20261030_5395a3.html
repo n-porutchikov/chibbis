@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое задание - Ответы</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --accent-color: #3182ce;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .qa-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-bottom: 30px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .qa-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+        }
+
+        .question {
+            background-color: #edf2f7;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .question h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .question p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .question ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            color: var(--text-main);
+        }
+
+        .answer {
+            padding: 24px;
+        }
+
+        .answer-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+        }
+
+        .answer p {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .code-inline {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            background-color: #f7fafc;
+            color: #2b6cb0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            border: 1px solid #e2e8f0;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #2b6cb0;
+        }
+
+        ul.custom-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+        }
+
+        ul.custom-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Карточка 1 -->
+        <div class="qa-card">
+            <div class="question">
+                <h3>Задание 1</h3>
+                <p>Мы проводим рекламную кампанию. Одинаковая ли будет конверсия в этих двух случаях?</p>
+                <ul>
+                    <li>15 кликов, 150 показов</li>
+                    <li>260 кликов, 2600 показов</li>
+                </ul>
+            </div>
+            <div class="answer">
+                <span class="answer-label">Мой ответ:</span>
+                <p>CTR 10% в двух случаях, но конверсия будет разной.</p>
+                <p>При 150 показах это может оказаться случайностью и ДИ будет широким.</p>
+                <p>При 2600 показов выборка больше.</p>
+                <p>При тех данных, что указаны, подсчёт CTR очень "грязный". Для корректного сравнения в таких условиях лучше использовать сглаженный CTR</p>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="qa-card">
+            <div class="question">
+                <h3>Задание 2</h3>
+                <p>В таблице ниже представлены заказы пользователей из одной сегментированной когорты, привлеченной на разные платформы. Есть ли проблема в текущем распределении? Как в дальнейшем следует распределять трафик на платформы?</p>
+            </div>
+            <div class="answer">
+                <span class="answer-label">Мой ответ:</span>
+                <p>Общее количество заказов — 660.</p>
+                <p>Доля Web составляет 56,8%, android 34,1%, IOS 9,1%</p>
+                <p>Web генерирует меньше заказов на единицу трафика, чем Android. Лучше сместить распределение трафика в сторону Android (34,1% заказов при 30% трафика).</p>
+            </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="qa-card">
+            <div class="question">
+                <h3>Задание 3</h3>
+                <p>На экране ниже происходит клик по кнопке “Заказать 3 блюда”. Придумайте название события для AppMetrica и укажите несколько параметров, которые будет полезно передать в этом событии.</p>
+            </div>
+            <div class="answer">
+                <span class="answer-label">Мой ответ:</span>
+                <p><span class="code-inline">click_checkout</span> - название события</p>
+                <p>Дополнительные параметры</p>
+                <ul class="custom-list">
+                    <li><span class="code-inline">delivery_type</span> (бесплатная доставка или нет)</li>
+                    <li><span class="code-inline">items_count</span> (влияет ли кол-во блюд на оформление данного клика)</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
